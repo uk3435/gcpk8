@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: android
+  labels:
+    app: android
+spec:
+  containers:
+  - name: android
+    image: budtmo/docker-android-x86-8.1
+    securityContext:
+      privileged: true
+    ports:
+    - containerPort: 6080
+    - containerPort: 5554
+    - containerPort: 5555
+    - containerPort: 4723
+    env:
+    - name: DEVICE
+      value: "Samsung Galaxy S6"
